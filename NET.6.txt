@@ -1,0 +1,40 @@
+crarlo con sql server https://www.youtube.com/watch?v=rUtWgEs07eI
+
+https://www.geekinsta.com/mysql-with-net-core-and-entity-framework/
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-5.0.4-windows-hosting-bundle-installer
+Install-Package Microsoft.EntityFrameworkCore -Version 6
+Install-Package Microsoft.EntityFrameworkCore.Tools  -Version 6
+Install-Package Microsoft.EntityFrameworkCore.Design -Version 6
+Install-Package Pomelo.EntityFrameworkCore.MySql -Version 6
+
+Scaffold-Dbcontext "server=localhost;database=sakila;uid=root;password=database;" Pomelo.EntityFrameworkCore.MySql -o Models
+"ConnectionStrings": {
+    "Mysql": "server=localhost;database=test;uid=root;password=;"
+  }
+
+//   ---------------------------------SE AGREGA PARA QUE RECONOZCA EL CONTEXT------------------------->
+var connectionString = builder.Configuration.GetConnectionString("Mysql");
+builder.Services.AddDbContext<libraryContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
+
+builder.Services.AddRazorPages()
+    .AddRazorRuntimeCompilation();
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+
+
+Install-Package Microsoft.EntityFrameworkCore
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.EntityFrameworkCore.Design
+Install-Package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+Install-Package Pomelo.EntityFrameworkCore.MySql

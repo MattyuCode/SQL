@@ -1,0 +1,57 @@
+---------------------MYSQL-----------------------------------------------
+https://www.tutorialesprogramacionya.com/mysqlya/temarios/descripcion.php?inicio=84&cod=102&punto=99
+
+PROCEDIMIENTO ALMACENADO
+
+DELIMITER //
+create procedure mostrarLibros()
+BEGIN
+  select * from libros;
+END //
+DELIMITER ;
+
+call mostrarLibros;
+
+
+
+DELIMITER //
+
+create procedure PA_libro(
+in _titulo varchar(40),
+in _autor varchar(20))
+
+begin
+insert into libros(titulo,autor) values(_titulo,_autor);
+end//
+DELIMITER ;
+
+
+call PA_libro('El nuevo T-SQL', 'Desconocido');
+
+
+
+
+
+
+---------------------------------------SQL SERVER-----------------------------------------
+
+create procedure procedimientoUsuario
+as
+select * from Usuario;
+
+
+
+exec procedimientoUsuario;
+
+
+create proc insertDatosUser(
+@nombre varchar(50),
+@telefono varchar(20),
+@email varchar(50)
+)
+as 
+begin
+insert into Usuario(Nombre,Telefono,Email) values (@nombre,@telefono,@email)
+end
+
+exec insertDatosUser 'Nuevo','545646545','adfasdfas23@gail.com';

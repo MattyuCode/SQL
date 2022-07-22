@@ -1,0 +1,9 @@
+ALTER TABLE nombre-de-tabla TYPE = MYISAM; 
+
+SELECT distinct title from solvetic.solvetic_mysql;
+
+ SELECT id, first--, surname FRm old-customer UNIm SELECT 
+id, first-name, surname FROM customer; 
+
+ SELECT id, first--, surname FRm old-customer UNIm SELECT 
+id, first-name, surname FRCM customer ORDER BY surname,first-name;

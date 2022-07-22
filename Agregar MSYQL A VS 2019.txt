@@ -1,0 +1,9 @@
+para agregar MYSQL a VISUAL STUDIO 2019
+https://www.youtube.com/watch?v=MBc6Xmfsguc
+
+
+
+Montaje:MySql.Data.Entity.EF6
+
+Paquete NuGet:MySql.Data.Entity
+
